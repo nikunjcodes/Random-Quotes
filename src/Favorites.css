@@ -1,0 +1,250 @@
+.favorites-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+  padding: 20px;
+}
+
+.favorites-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #faf8f3;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+  padding: 40px;
+  animation: slideUp 0.6s ease-out;
+  border: 2px solid #e6d7c3;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.favorites-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: #f5f5dc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-50%) translateX(-2px);
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+.favorites-header h2 {
+  color: #1e3a8a;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: 'Bonheur Royale', cursive;
+}
+
+.favorites-header p {
+  color: #2c3e50;
+  font-size: 18px;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #1e3a8a;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  border-left: 4px solid #dc2626;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.no-favorites {
+  text-align: center;
+  padding: 60px 20px;
+  color: #1e3a8a;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.no-favorites h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.no-favorites p {
+  font-size: 16px;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.favorite-quote-card {
+  background: #f5f5dc;
+  border-radius: 16px;
+  padding: 30px;
+  border: 2px solid #e6d7c3;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.favorite-quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+.favorite-quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(30, 58, 138, 0.15);
+  border-color: #dc2626;
+}
+
+.favorite-quote-card .quote-text {
+  font-family: 'Bonheur Royale', cursive;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  line-height: 1.4;
+  position: relative;
+}
+
+.favorite-quote-card .quote-text::before {
+  content: '"';
+  font-size: 4rem;
+  color: #dc2626;
+  position: absolute;
+  top: -0.8rem;
+  left: -1.2rem;
+  opacity: 0.4;
+}
+
+.favorite-quote-card .quote-author {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.quote-category {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: #f5f5dc;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.remove-favorite-button {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: #f5f5dc;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: auto;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.remove-favorite-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .favorites-card {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+  
+  .favorites-header h2 {
+    font-size: 24px;
+  }
+  
+  .back-button {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+  }
+  
+  .favorites-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .favorite-quote-card {
+    padding: 25px;
+  }
+  
+  .favorite-quote-card .quote-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites-container {
+    padding: 10px;
+  }
+  
+  .favorites-card {
+    padding: 20px 15px;
+  }
+  
+  .favorites-header h2 {
+    font-size: 20px;
+  }
+  
+  .favorite-quote-card .quote-text {
+    font-size: 1.4rem;
+  }
+} 
